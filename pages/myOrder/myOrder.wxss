@@ -1,0 +1,65 @@
+page {
+  height: 100%;
+}
+
+/* 导航栏 */
+.navBar {
+  width: 100%;
+  background-color: #ffffff;
+}
+
+.navBar .navBar_title {
+  /* width: 600rpx; */
+  font-size: 36rpx;
+  font-weight: bold;
+  color: black;
+  display: flex;
+  align-items: center;
+}
+
+
+.myOrder_box {
+  background-color: #f7f7f7;
+  height: 100%;
+}
+
+.tabs {
+  width: 100%;
+}
+
+.tab_bar {
+  display: flex;
+  background-color: #ffffff;
+  padding-top: 16rpx;
+  border-bottom: 2rpx #E4E4E4 solid;
+}
+.tab_bar .tab_item {
+  flex: 1;
+  text-align: center;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #6d6d6d;
+  font-size: 28rpx;
+}
+.tab_bar .tab_item text {
+  padding: 20rpx 8rpx;
+}
+
+
+.tabs .no_order>view {
+  text-align: center;
+  color: #999999;
+}
+
+.tabs .no_order>view:first-child {
+  font-size: 200rpx;
+}
+
+.bottomTips {
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  width: 100%;
+  text-align: center;
+}
+
+

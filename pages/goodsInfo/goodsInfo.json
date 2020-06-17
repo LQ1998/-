@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "vant-picker": "/miniprogram_npm/vant-weapp/picker/index"
+  },
+  "navigationStyle": "custom",
+  "disableScroll": true
+}

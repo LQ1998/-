@@ -1,0 +1,70 @@
+<view class="my_box">
+	<mp-navigation-bar ext-class="navBar" back="{{false}}" id="navBar">
+		<view class="navBar_title" slot="center">
+			<text>个人中心</text>
+		</view>
+	</mp-navigation-bar>
+
+	<!-- 用户 -->
+	<view class="navBar_user">
+		<block wx:if="{{!userInfo}}">
+			<view class="user" bindtap="goLogin">
+				<view class="avatar_user">
+					<image src="https://i0.hdslb.com/bfs/bangumi/image/1a217a2d5885facfc76b1c7b1f08435466a88ebd.png@70w_70h_1c_100q.jpg"></image>
+				</view>
+				<view class="username">点击登录</view>
+			</view>
+		</block>
+		<block wx:else>
+			<view class="user">
+				<view class="avatar_user">
+					<image src="{{userInfo.avatar}}"></image>
+				</view>
+				<view class="username">{{userInfo.name}}</view>
+			</view>
+		</block>
+		<!-- 订单 -->
+		<view class="order">
+			<view class="title_order" bindtap="gomyOrder">
+				<view>我的订单</view>
+				<view>全部订单 <text class="iconfont icon-arrow-right address_right"></text></view>
+			</view>
+			<view class="order_list" bindtap="gomyOrder">
+				<view class="order_listAll">
+					<text class="iconfont icon-dingdanye"></text>
+					<view>全部订单</view>
+				</view>
+				<view class="order_listAll">
+					<text class="iconfont icon-ziyuan1"></text>
+					<view>待付款</view>
+				</view>
+				<view class="order_listAll">
+					<text class="iconfont icon-ziyuan"></text>
+					<view>待收货</view>
+				</view>
+				<view class="order_listAll">
+					<text class="iconfont icon-daipingjia"></text>
+					<view>待评价</view>
+				</view>
+			</view>
+		</view>
+	</view>
+
+	<!-- 底部 -->
+	<view class="user_bottom">
+		<view class="address" bindtap="goAddress">
+			<view class="address_left">
+				<text class="iconfont icon-location"></text>
+				<text>收货地址</text>
+			</view>
+			<view class="iconfont icon-arrow-right address_right"></view>
+		</view>
+		<view class="address" bindtap="goHelp">
+			<view class="address_left">
+				<text class="iconfont icon-bangzhuzhongxin"></text>
+				<text>我的帮助</text>
+			</view>
+			<view class="iconfont icon-arrow-right address_right"></view>
+		</view>
+	</view>
+</view>

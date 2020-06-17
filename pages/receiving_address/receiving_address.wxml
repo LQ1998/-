@@ -1,0 +1,42 @@
+<view class="receiving_address-box">
+	<mp-navigation-bar ext-class="navBar" id="navBar">
+		<view class="navBar_title" slot="center">
+			收货地址
+		</view>
+	</mp-navigation-bar>
+
+	<scroll-view scroll-y style="height: calc(100vh - {{newAddress}}px - {{navBarHeight}}px )">
+		<block wx:for="{{addressList}}" wx:for-index="i" wx:key="address_id">
+			<view class="address">
+				<view class="address_top">
+					<view class="address_user">
+						<view class="username">{{item.name}}</view>
+						<view class="userPhone">{{item.phone}}</view>
+					</view>
+					<view class="addrInfo">
+						<view>{{item.province}} {{item.city}} {{item.region}}</view>
+						<view>{{item.detail}}</view>
+					</view>
+				</view>
+				<view class="address_bottom">
+					<view class="bottom_left" bindtap="chageIconAndText" data-address_item="{{item}}">
+						<view>
+							<iconfont name="{{item.isDefault ? 'icon-gouxuan-yuan' : 'yuan-active'}}" size="28"></iconfont>
+						</view>
+						<view>{{item.isDefault ? '默认' : '选择'}}</view>
+					</view>
+					<view class="bottom_right">
+						<view class="iconfont icon-bianji" data-address_item="{{item}}" bindtap="gonewAddress"></view>
+						<view data-address_item="{{item}}" bindtap="gonewAddress">编辑</view>
+						<view class="iconfont icon-lajixiang" data-address_item="{{item}}" bindtap="delAddress"></view>
+						<view data-address_item="{{item}}" bindtap="delAddress">删除</view>
+					</view>
+				</view>
+			</view>
+		</block>
+	</scroll-view>
+	<view class="newAddress-view" id="newAddress" bindtap="goNewAddress">
+		添加新增地址
+	</view>
+
+</view>

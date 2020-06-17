@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "input-component" : "../../components/input/input",
+    "shopList_cmp" : "../../components/shopList_cmp/shopList_cmp"
+  },
+  "navigationStyle": "custom",
+  "disableScroll": true
+}

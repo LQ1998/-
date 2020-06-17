@@ -1,0 +1,7 @@
+<view class="shopCatBottom">
+	<view class="bottomLeft">合计：￥{{totalPrice}}</view>
+	<view class="bootomRight" bindtap="goOrderConfirm">去结算</view>
+</view>
+
+
+

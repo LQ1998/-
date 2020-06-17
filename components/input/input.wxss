@@ -1,0 +1,24 @@
+/* .view_input{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+.view_input_item{
+  /* width: 710rpx;
+  height: 70rpx;
+  border-radius: 20rpx; */
+  /* margin: 20rpx ; */
+  /* background-color: #fff; */
+  height: 70rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 26rpx;
+  color: #999;
+}
+
+.view_input_item .input_icon{
+  font-size: 34rpx;
+  margin-right: 20rpx;
+}

@@ -1,0 +1,64 @@
+/* pages/home/home.wxss */
+/* 导航栏 */
+.navBar{
+  width: 100%;
+  background-color: #FE9B64;
+  
+}
+
+.navBar .navBar_title{
+  /* width: 600rpx; */
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+/* 整个页面 */
+.home_box{
+  background-color: #F1F1F2;
+  height: 100%;
+}
+
+/* 轮播图 */
+.view_switch{
+  width: 100%;
+  padding-bottom: 26rpx;
+}
+
+.home_box .view_switch image{
+  height: 100%;
+  width: 100%;
+}
+
+/* 新品推荐 */
+.home_box .recommend_view{
+  padding: 20rpx;
+  background-color: #fff;
+}
+
+.home_box .recommend_view .newText_view{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 36rpx;
+  font-weight: bold;
+}
+.home_box .recommend_view .scroll-shop_box{
+  margin-top: 20rpx;
+}
+
+.home_box .recommend_view .scroll-shop_view{
+  white-space: nowrap;
+}
+
+/* 商品 */
+.mian_shop{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+

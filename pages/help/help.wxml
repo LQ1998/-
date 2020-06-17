@@ -1,0 +1,19 @@
+<view class="help_box">
+	<mp-navigation-bar ext-class="navBar" id="navBar">
+		<view class="navBar_title" slot="center">
+			帮助
+		</view>
+	</mp-navigation-bar>
+
+	<view class="title">
+		<view>关于小程序</view>
+		<view>
+			小程序本身无需下载，无需注册，不占用手机内存，可以跨平台使用，响应迅速，体验接近原生APP。
+		</view>
+	</view>
+</view>
+
+
+
+
+

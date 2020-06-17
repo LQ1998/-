@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "scroll-shop": "../../components/scroll-shop/scroll-shop",
+    "line": "../../components/line/line",
+    "input-component" : "../../components/input/input",
+    "shopList_cmp": "../../components/shopList_cmp/shopList_cmp"
+  },
+  "navigationStyle": "custom",
+  "disableScroll": true
+}

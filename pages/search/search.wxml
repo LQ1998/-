@@ -1,0 +1,28 @@
+<view class="search_box">
+	<mp-navigation-bar ext-class="navBar" back="{{true}}" id="navBar">
+		<view class="navBar_title" slot="center">
+			搜索
+		</view>
+	</mp-navigation-bar>
+	<scroll-view>
+		<!-- 文本框 -->
+		<view class="search">
+			<view class="search-input_view">
+				<view class="iconfont icon-Magnifier"></view>
+				<input class="search-input" focus="{{true}}" placeholder-class="placeholder" placeholder="请输入您搜索的商品" model:value="{{inputVal}}"></input>
+			</view>
+			<view class="search_text" bindtap="addRecentSearch">搜索</view>
+		</view>
+
+		<!-- 最近搜索 -->
+		<view class="recentSearch">
+			<view class="recentSearch_top">
+				<view>最近搜索</view>
+				<view class="iconfont icon-lajixiang" bindtap="deleteRecentSearch"></view>
+			</view>
+			<view class="recentSearch_bottom" >
+				<view wx:for="{{recentSearch_mian}}" wx:key="i" wx:for-index="i" bindtap="searchGoods" data-id="{{item.id}}">{{item.text}}</view>
+			</view>
+		</view>
+	</scroll-view>
+</view>

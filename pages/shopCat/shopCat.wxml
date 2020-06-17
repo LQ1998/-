@@ -1,0 +1,35 @@
+<view class="shopCat_box">
+	<mp-navigation-bar ext-class="navBar" back="{{false}}" id="navBar">
+		<view class="navBar_title" slot="center">
+			购物车
+		</view>
+	</mp-navigation-bar>
+
+	<!-- 购物车  空 则显示此view -->
+	<block wx:if="{{!shopCat.length}}">
+		<view class="emptyShopCat">
+			<view class="iconfont icon-kongkongruye"></view>
+			<view>亲，购物车还没有商品哦</view>
+			<button type="primary" bindtap="goHome">去逛逛</button>
+		</view>
+	</block>
+	<!-- 购物车列表有内容时显示此view -->
+	<block wx:else>
+		<scroll-view 
+			scroll-y style="height:calc(100vh - {{navBarHeight}}px - 110rpx)"
+			enable-back-to-top="{{true}}" 
+			refresher-enabled="{{true}}"
+			refresher-triggered="{{triggered}}"
+			refresher-threshold="{{30}}"
+			bindrefresherrefresh="downRefresh"
+		>
+			<block wx:for="{{shopCat}}" wx:for-index="i" wx:key="i">
+				<shopCat extClass="prohibit" shopCatItem="{{item}}" bind:deleteShopCatEvent="deleteShopCatEvent" bind:shopCatEvent="shopCatEvent"
+				></shopCat>
+			</block>
+		</scroll-view>
+		<shopCatBottom_cmp shopCat="{{shopCat}}" bind:goOrderConfirmEvent="goOrderConfirmEvent"></shopCatBottom_cmp>
+	</block>
+	<input model:value="{{value}}" />
+	<text>{{value}}</text>
+</view>

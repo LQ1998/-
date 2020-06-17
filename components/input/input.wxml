@@ -1,0 +1,4 @@
+<view class="view_input_item" style="background-color:{{bg_color}};border-radius:{{radiusSize}}rpx; margin:{{marginSizi}}rpx; width:{{widthSizi}}rpx; ">
+	<text class="input_icon iconfont icon-Magnifier"></text>
+	<text>搜索商品</text>
+</view>

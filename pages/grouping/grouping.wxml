@@ -1,0 +1,40 @@
+<mp-navigation-bar ext-class="navBar" back="{{false}}" id="navBar">
+	<view class="navBar_title" slot="center">
+		全部分类
+	</view>
+</mp-navigation-bar>
+
+<view class="grouping_box">
+	<!-- 搜索框 -->
+	<input-component bg_color="#F1F1F1" bindtap="goSearch" radiusSize="80" id="inputId"></input-component>
+	<view class="mian">
+		<scroll-view style="height:calc(100vh - {{navBarHeight}}px - {{inputHeight}}px); width:210rpx" scroll-y class="left_scroll">
+			<view class="left_mian">
+				<view class="left_view {{i == index ? 'active' : ''}}" wx:for="{{showView}}" wx:for-index="i" wx:key="id" bindtap="typeNavClick" data-id="{{item.id}}" data-index="{{i}}">
+					{{item.group_name}}
+				</view>
+			</view>
+		</scroll-view>
+
+		<scroll-view style="height: calc(100vh - {{navBarHeight}}px - {{inputHeight}}px ); width:100%" scroll-y>
+			<view class="right_main">
+				<!-- 首先循环 分组列表数组-->
+				<block wx:for="{{showView}}" wx:key="id" wx:for-item="showViewItem" wx:for-index="showViewIndex">
+					<!-- 然后根据点击的分类id判断 showView数组对象里的商品类别数组对象-->
+					<block wx:if="{{id == showViewItem.id}}">
+						<!-- 循环商品类别数组对象 显示商品类别 -->
+						<block wx:for="{{showViewItem.cateArr}}" wx:key="category_id" wx:for-item="cateArr_item" wx:for-index="cateArr_index">
+							<!-- 点击跳转到商品列表页面并根据商品类别id查询商品 -->
+							<view class="image_view" bindtap="goShopSearchList" data-cateArr_id="{{cateArr_item.category_id}}">
+								<view class="image_item">
+									<image src="{{cateArr_item.image}}"></image>
+								</view>
+								<view class="image_text">{{cateArr_item.name}}</view>
+							</view>
+						</block>
+					</block>
+				</block>
+			</view>
+		</scroll-view>
+	</view>
+</view>

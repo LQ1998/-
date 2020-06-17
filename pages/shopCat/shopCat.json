@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "shopCat":"../../components/shopCat/shopCat",
+    "shopCatBottom_cmp":"../../components/shopCatBottom_cmp/shopCatBottom_cmp"
+  },
+  "navigationStyle": "custom",
+  "disableScroll": true
+}

@@ -1,0 +1,111 @@
+.orderList {
+  margin-top: 30rpx;
+  background-color: #ffffff;
+}
+.goodsTitle {
+  padding: 10rpx 20rpx;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2rpx #F1F1F1 solid;
+}
+
+.goodsTitle .titleLeft-view {
+  flex: 1
+}
+.goodsTitle .titleLeft-view>view:first-child {
+  color: #333333;
+}
+.goodsTitle .titleLeft-view>view:last-child  {
+  margin-top: 10rpx;
+  font-size: 26rpx;
+  color: #777777;
+}
+.goodsTitle .titleRight-view>view {
+  color: #333333;
+  text-align: right;
+}
+.goodsTitle .titleRight-view>view:last-child {
+  margin-top: 10rpx;
+  font-size: 26rpx;
+  color: #777777;
+}
+
+.goodsBanner {
+  display: flex;
+  justify-content: space-between;
+  height: 210rpx;
+  border-bottom: 2rpx #F1F1F1 solid;
+}
+.goodsBanner .imageAll-view {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+.goodsBanner .imageAll-view .scroll-shop_view{
+  white-space: nowrap;
+}
+
+.goodsBanner .imageAll-view .image-view {
+  margin-left: 20rpx;
+  height: 100%;
+  width: 180rpx;
+  display: inline-block;
+}
+.goodsBanner .imageAll-view .image-view>image {
+  height: 100%;
+  width: 100%;
+}
+.goodsBanner .count-view {
+  width: 186rpx;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.goodsPrice {
+  padding: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.goodsPrice .priceLeft-view {
+  display: flex;
+  align-items: center;
+}
+
+.goodsPrice .refund {
+  color: #555555;
+  border: 2rpx #CCCCCC solid;
+  border-radius: 10rpx;
+  padding: 0 20rpx;
+}
+.goodsPrice .priceLeft-view>view:first-child {
+  color: #777777;
+}
+.goodsPrice .priceLeft-view>view:last-child {
+  margin-left: 20rpx;
+  color: #FF495E;
+}
+.goodsPrice .priceRight-view {
+  display: flex;
+  align-items: center;
+}
+.goodsPrice .priceRight-view>view:first-child {
+  color: #555555;
+  border: 2rpx #CCCCCC solid;
+  margin-right: 10rpx;
+  border-radius: 10rpx;
+  padding: 0 20rpx;
+}
+.goodsPrice .priceRight-view>view:last-child {
+  color: #FF495E;
+  border: 2rpx #FF495E solid;
+  border-radius: 10rpx;
+  padding: 0 20rpx;
+}
+

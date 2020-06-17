@@ -1,0 +1,36 @@
+
+.scroll-view_item_components-tpApril{
+  display: inline-block;
+  height: 100%;
+  width: 156rpx;
+  /* border: 2rpx black solid; */
+  margin-right: 20rpx;
+  box-sizing: border-box;
+}
+
+.scroll-view_item_components-tpApril .shopImage_view{
+  height: 156rpx;
+  width: 100%;
+  border: 2rpx #F2F2F2 solid;
+  border-radius: 10rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+  /* padding: 0 20rpx; */
+}
+.scroll-view_item_components-tpApril .shopImage_view image{
+  height: 100%;
+  width: 100%;
+}
+.scroll-view_item_components-tpApril .shopText_view{
+  text-align: left;
+  font-size: 26rpx;
+}
+.scroll-view_item_components-tpApril .shopText_view view:first-child{
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  color: #242424;
+}
+.scroll-view_item_components-tpApril .shopText_view view:last-child{
+  color: #FF7383;
+}

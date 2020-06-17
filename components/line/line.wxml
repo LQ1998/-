@@ -1,0 +1,13 @@
+<view class="youLike">
+	<view></view>
+	<view class="youLike_text">
+		<view wx:if="{{icon_redu}}">
+      <text class="iconfont {{icon_Url}}"></text>
+		</view>
+		<text style="margin:{{margin_extclass ? '0 10rpx' : '0'}}">{{lineText}}</text>
+	</view>
+	<view></view>
+</view>
+
+
+

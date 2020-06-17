@@ -1,0 +1,18 @@
+<view class="scroll-view_box" id="shopCat{{shopCatItem.goods_id}}">
+	<view class="view_left" bindtap="goGoodsInfo" data-goods_id="{{shopCatItem.goods_id}}">
+		<image src="{{shopCatItem.goods_image}}"></image>
+	</view>
+	<view class="view_right">
+		<view class="view_title" bindtap="goGoodsInfo" data-goods_id="{{shopCatItem.goods_id}}">{{shopCatItem.goods_name}}</view>
+		<text class="view_colorText" bindtap="goGoodsInfo" data-goods_id="{{shopCatItem.goods_id}}">{{shopCatItem.goods_no}}</text>
+		<view class="view_price" bindtap="goGoodsInfo" data-goods_id="{{shopCatItem.goods_id}}">￥{{shopCatItem.goods_price}}</view>
+		<view class="view_btn">
+			<view class="btn">
+				<view bindtap="jianShop" data-goods_id="{{shopCatItem.goods_id}}" class="{{shopCatItem.count == 1 ? extClass : '' }}">-</view>
+				<view>{{shopCatItem.count}}</view>
+				<view bindtap="jiaShop" data-goods_id="{{shopCatItem.goods_id}}"  class="{{shopCatItem.count == 99 ? extClass : '' }}">+</view>
+			</view>
+			<text class="iconfont icon-lajixiang" bindtap="deleteShopCat" data-goods_id="{{shopCatItem.goods_id}}"></text>
+		</view>
+	</view>
+</view>

@@ -1,0 +1,12 @@
+<view class="view_shopItem">
+	<view class="view_image">
+		<image src="{{shopList_item.goods_image}}"></image>
+	</view>
+	<view class="mian_view_text">
+		<view>{{shopList_item.goods_name}}</view>
+		<view class="mian_view_text-lastView">
+			<view>￥{{shopList_item.goods_price}}</view>
+			<view>{{shopList_item.goods_sales}}</view>
+		</view>
+	</view>
+</view>

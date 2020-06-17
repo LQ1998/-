@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "vant-area": "../../miniprogram_npm/vant-weapp/area",
+    "mp-actionSheet": "/miniprogram_npm/weui-miniprogram/actionsheet/actionsheet",
+    "mp-toptips": "/miniprogram_npm/weui-miniprogram/toptips/toptips"
+  },
+  "navigationStyle": "custom",
+  "disableScroll": true
+}

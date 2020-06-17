@@ -1,0 +1,50 @@
+<mp-navigation-bar ext-class="navBar" back="{{false}}" id="navBar">
+	<view class="navBar_title" slot="center">
+		小程序商城
+	</view>
+</mp-navigation-bar>
+
+<view class="home_box">
+	<scroll-view scroll-y style="height:calc(100vh - {{navBarHeight}}px);">
+		<!-- input文本框 -->
+		<input-component bindtap="goSearch" bg_color="#fff" radiusSize="20"></input-component>
+		<!-- 轮播图 -->
+		<view class="view_switch">
+			<swiper interval="{{3000}}" autoplay="{{true}}" circular="{{true}}" indicator-dots="{{true}}">
+				<block wx:for="{{bannerList}}" wx:key="banner_id" wx:for-index="i">
+					<swiper-item item-id="{{item.goods_id}}" >
+						<image src="{{item.banner_img}}" bindtap="goGoodsInfo" data-goods_id="{{item.goods_id}}"></image>
+					</swiper-item>
+				</block>
+			</swiper>
+		</view>
+		<!-- 新品推荐 -->
+		<view class="recommend_view">
+			<!-- 新品文字 -->
+			<view class="newText_view">
+				<text>新品推荐</text>
+			</view>
+			<!-- 商品 -->
+			<view class="scroll-shop_box">
+				<!-- bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}"  -->
+				<scroll-view style="height:256rpx; width:100%" scroll-x="{{true}}" class="scroll-shop_view">
+					<block wx:for="{{likeList}}" wx:for-index="i" wx:key="goods_id">
+						<scroll-shop bindtap="goGoodsInfo" data-goods_id="{{item.goods_id}}" likeList="{{item}}" class="scrollShop" extclass="{{ i==likeList.length ? true : false }}"></scroll-shop>
+					</block>
+				</scroll-view>
+			</view>
+		</view>
+		<!-- 猜你喜欢 -->
+		<line icon_redu="{{true}}" icon_Url="icon-redu" lineText="猜你喜欢"></line>
+
+		<!-- 商品 -->
+		<view class="mian_shop">
+			<block wx:for="{{newList}}" wx:key="goods_id" wx:for-index="i">
+				<shopList_cmp bindtap="goGoodsInfo" data-goods_id="{{item.goods_id}}" shopList_item="{{item}}"></shopList_cmp>
+			</block>
+		</view>
+
+		<!-- 底线 -->
+		<line imageSrc="{{false}}" lineText="我是有底线的" margin_extclass="{{true}}"></line>
+	</scroll-view>
+</view>

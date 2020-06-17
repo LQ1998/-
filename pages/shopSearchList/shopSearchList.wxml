@@ -1,0 +1,57 @@
+<view class="shopSearchList_box">
+	<mp-navigation-bar ext-class="navBar" id="navBar">
+		<view class="navBar_title" slot="center">
+			商品列表
+		</view>
+	</mp-navigation-bar>
+
+	<view id="headHeight">
+		<view class="input_view">
+			<!-- input文本框 -->
+			<view>
+				<input-component bg_color="#F1F1F1" radiusSize="40" widthSizi="640" marginSizi="0"></input-component>
+			</view>
+			<view bindtap="changeColumn" class="iconfont {{ column ? 'icon-lanmuguanli' : 'icon-lanmuguanli1' }}"></view>
+		</view>
+
+		<view class="sort_view">
+			<view bindtap="tabBarClick" data-desc="kind" class="{{descKind? 'active' : ''}}">综合</view>
+			<view bindtap="tabBarClick" data-desc="sales" class="{{descSales? 'active' : ''}}">销量</view>
+			<view bindtap="priceClick">
+				<view class="price_jiaGe" class="{{descPrice? 'active' : ''}}">价格</view>
+				<iconfont name="paixu" wx:if="{{priceIcon === 0}}"></iconfont>
+				<iconfont name="paixu1-copy" wx:if="{{priceIcon === 1}}"></iconfont>
+				<iconfont name="paixu-copy" wx:if="{{priceIcon === 2}}"></iconfont>
+			</view>
+		</view>
+	</view>
+
+	<scroll-view scroll-y style="height: calc( 100vh - {{navBarHeight + headHeight}}px )">
+		<!-- 纵向 -->
+		<block wx:if="{{column}}">
+			<view class="mian_shop1">
+				<block wx:for="{{shopList}}" wx:for-index="i" wx:key="i">
+					<shopList_cmp shopList_item="{{item}}" bindtap="goGoodsInfo" data-goods_id="{{item.goods_id}}"></shopList_cmp>
+				</block>
+			</view>
+		</block>
+
+		<!-- 横向 -->
+		<block wx:else>
+			<block wx:for="{{shopList}}" wx:for-index="i" wx:key="i">
+				<view class="mian_shop2" bindtap="goGoodsInfo" data-goods_id="{{item.goods_id}}">
+					<view class="view_image">
+						<image src="{{item.goods_image}}"></image>
+					</view>
+					<view class="mian_view_text">
+						<view>{{item.goods_name}}</view>
+						<view class="mian_view_text-lastView">
+							<text>￥{{item.goods_price}}</text>
+							<text>{{item.goods_sales}}</text>
+						</view>
+					</view>
+				</view>
+			</block>
+		</block>
+	</scroll-view>
+</view>

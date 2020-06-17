@@ -1,0 +1,50 @@
+/* 导航栏 */
+.navBar {
+  width: 100%;
+  background-color: #fff;
+}
+
+.navBar .navBar_title {
+  /* width: 600rpx; */
+  font-size: 36rpx;
+  font-weight: bold;
+  color: black;
+  display: flex;
+  align-items: center;
+}
+
+page{
+  height: 100%;
+}
+
+/* 购物车页面 */
+.shopCat_box{
+  min-height: 100%;
+  background-color: #F7F7F7;
+  /* padding-bottom: 110rpx; */
+  position: relative;
+}
+
+/* 空购物车页面 */
+.emptyShopCat{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.emptyShopCat view:nth-child(1){
+  padding-top: 60rpx;
+  width: 100%;
+  font-size: 240rpx;
+  display: flex;
+  justify-content: center;
+}
+.emptyShopCat view:nth-child(2){
+  width: 100%;
+  font-size: 40rpx;
+  color: #999999;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20rpx;
+}
+

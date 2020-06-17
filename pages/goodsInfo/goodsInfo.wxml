@@ -1,0 +1,125 @@
+<view class="goodsInfo_box">
+	<mp-navigation-bar ext-class="navBar" id="navBar" back="{{!pageId}}">
+		<view class="iconfont icon-fangzi" slot="left" wx:if="{{pageId}}" bindtap="goHome"></view>
+		<view class="navBar_title" slot="center">
+			商品列表
+		</view>
+	</mp-navigation-bar>
+
+	<scroll-view scroll-y style="height: calc( 100vh - {{navBarHeight}}px ) ">
+		<!-- 轮播图 -->
+		<view class="banner_view">
+			<swiper style="height: 830rpx" circular="{{true}}" indicator-dots="{{true}}" bindchange="currentChange">
+				<block wx:for="{{goodsInfoArr.bannerArr}}" wx:key="i" wx:for-index="i">
+					<swiper-item item-id="{{i}}">
+						<image src="{{item.banner_cover}}"></image>
+					</swiper-item>
+				</block>
+			</swiper>
+			<view class="banner_capsule">
+				<text>{{current}}</text><text> /{{goodsInfoArr.bannerArr.length}}</text>
+			</view>
+		</view>
+
+		<!-- 商品详情 -->
+		<view class="goods_details">
+			<view>{{goodsInfoArr.goods_name}}</view>
+			<view class="price">
+				<view>
+					￥{{goodsInfoArr.goods_price}}
+				</view>
+				<view>
+					{{goodsInfoArr.goods_sales}}
+				</view>
+			</view>
+			<view class="goods_details_bottom">
+				<view>销量: {{goodsInfoArr.sales}}</view>
+				<view>库存: {{goodsInfoArr.stock_num}}</view>
+			</view>
+		</view>
+
+		<!-- 用户选择 -->
+		<view class="userChoice">
+			<view class="count_view">
+				<view class="count_item">
+					<view>已选</view>
+					<view>{{selected}} 个</view>
+				</view>
+				<view class="iconfont {{ upOrDown ? 'icon-up-copy' : 'icon-up'}}" bindtap="changeIcon"></view>
+			</view>
+			<block wx:if="{{upOrDown}}">
+				<view class="group_view">
+					<block wx:if="{{goodsInfoArr.spec_type}}">
+						<view class="group_view_color">
+							<view class="group_view_color_text">颜色</view>
+							<view class="group_view_color_btn">
+								<view class="active">银色</view>
+								<view>深空灰色</view>
+							</view>
+						</view>
+						<view class="group_view_color">
+							<view class="group_view_color_text">内存</view>
+							<view class="group_view_color_btn">
+								<view class="active">64G</view>
+								<view>256G</view>
+							</view>
+						</view>
+						<view class="group_view_color">
+							<view class="group_view_color_text">方式</view>
+							<view class="group_view_color_btn">
+								<view class="active">官方标配</view>
+								<view>套餐一</view>
+							</view>
+						</view>
+					</block>
+					<view class="group_view_color">
+						<view class="group_view_color_text">购买数量</view>
+						<view class="view_btn">
+							<view class="btn">
+								<view class="{{selected == 1 ? 'prohibit' : ''}}" bindtap="jianBtn">-</view>
+								<view>{{selected}}</view>
+								<view class="{{selected == 99 ? 'prohibit' : ''}}" bindtap="jiaBtn">+</view>
+							</view>
+						</view>
+					</view>
+				</view>
+			</block>
+		</view>
+
+		<!-- 商品描述 -->
+		<view class="goods_describe">
+			<view class="goods_describe-text">商品描述</view>
+			<view class="goods_describe-view">
+				<view class="goods_describe-view-image">
+					<rich-text nodes="{{content}}"></rich-text>
+
+					<!-- <image src="https://i2.hdslb.com/bfs/archive/acf48155256ca3fa60783678a96e056e09196948.jpg@114w_70h.jpg"></image> -->
+				</view>
+				<view class="gpods_describe-view-text">
+					<view>
+						<view>1、fjsdklg,ksdfjkljsdfkljgklsdj</view>
+						<view>2、结果看到类似美国绿卡的舒服就会受到法律可根据jjsdglkjdf</view>
+						<view>3、gdfslkjglkfdjkgsldf</view>
+						<view>4、gkdfjbkldflbjmldfkm</view>
+					</view>
+					<view></view>
+				</view>
+			</view>
+		</view>
+	</scroll-view>
+
+	<!-- 底部 -->
+	<view class="shopCatbottom">
+		<view class="shopCatbottom-iconView">
+			<view class="iconfont icon-kefu"></view>
+			<view class="iconfont icon-gouwuche shopCatIcon" bindtap="goShopCat">
+				<!-- 如果goodsList_length不为0的话则显示view -->
+				<block wx:if="{{goodsList_length}}">
+					<view>{{goodsList_length}}</view>
+				</block>
+			</view>
+		</view>
+		<view bindtap="addPocket" data-goods_id="{{goodsInfoArr.goods_id}}">加入购物车</view>
+		<view bindtap="goOrderConfirm">立即购买</view>
+	</view>
+</view>

@@ -1,0 +1,43 @@
+<view class="myOrder_box">
+	<mp-navigation-bar ext-class="navBar" id="navBar">
+		<view class="navBar_title" slot="center">
+			<text>我的订单</text>
+		</view>
+	</mp-navigation-bar>
+
+	<view class="tabs">
+		<view class="tab_bar" id="tabBar">
+			<view class="tab_item" wx:for="{{tab}}" wx:for-index="i" wx:key="i">
+				<text style="color:{{index == i ? activeColor: ''}}" data-index="{{i}}" bindtap="tabChange">{{item}}</text>
+			</view>
+		</view>
+
+		<swiper style="height:calc(100vh - {{navBarHeight}}px - {{tabBarHeight}}px)" bindchange="swiperChangeStart" bindanimationfinish="swiperChangeEnd" current="{{index}} ">
+			<!-- 全部订单 -->
+			<swiper-item wx:for="{{orderListAll.length}}" wx:for-index="j" wx:key="j">
+				<scroll-view
+				 	style="height: calc( 100vh - {{tabBarHeight}}px - {{navBarHeight}}px )" scroll-y bindscrolltolower="lower"
+					enable-back-to-top="{{true}}" 
+					refresher-enabled="{{true}}"
+					refresher-triggered="{{triggered}}"
+					refresher-threshold="{{30}}"
+					bindrefresherrefresh="downRefresh" 
+					data-index="{{index}}"
+				>
+					<!-- 订单列表为空时显示 -->
+					<block wx:if="{{!orderListAll[j].length}}">
+						<view class="no_order">
+							<view class="iconfont icon-meiyoudingdan"></view>
+							<view>亲，你还没有订单信息哦！</view>
+						</view>
+					</block>
+					<!-- 订单列表不为空显示 -->
+					<block wx:if="{{orderListAll[j].length}}">
+						<swiper-orderAdd wx:for="{{orderListAll[j]}}" wx:key="order_id" order_item="{{item}}" wx:for-index="i" extClass="{{i == 0 ? true : false}}" index="{{index}}" bind:refreshOrder="refreshOrder"></swiper-orderAdd>
+						<view class="bottomTips" wx:if="{{!orderListPage}}">亲,没有更多了</view>
+					</block>
+				</scroll-view>
+			</swiper-item>
+		</swiper>
+	</view>
+</view>

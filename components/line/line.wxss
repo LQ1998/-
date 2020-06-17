@@ -1,0 +1,33 @@
+.youLike{
+  height: 74rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 16rpx;
+}
+
+.youLike .youLike_text{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 26rpx;
+  color: #8C8C8C;
+}
+.youLike .youLike_text view{
+  font-size: 26rpx;
+  color: #FF495E;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10rpx;
+}
+
+.youLike>view:first-child{
+  width: 236rpx;
+  border-top: 2rpx #999 solid;
+}
+.youLike>view:last-child{
+  width: 236rpx;
+  border-top: 2rpx #999 solid;
+}

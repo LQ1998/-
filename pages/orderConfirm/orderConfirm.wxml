@@ -1,0 +1,130 @@
+<view class="orderConfirm_box">
+	<mp-navigation-bar ext-class="navBar" id="navBar">
+		<view class="navBar_title" slot="center">
+			<text>订单确认</text>
+		</view>
+	</mp-navigation-bar>
+
+	<scroll-view scroll-y style="height: calc( 100vh - {{navBarHeight}}px ); background-color: #F7F7F7">
+		<view class="box_view" refresher-background="#F7F7F7">
+			<!-- 当默认地址为空的时候显示 -->
+			<block wx:if="{{!userAddress.length}}">
+				<view class="address_view" bindtap="goReceiving_address">
+					<view class="addressicon_view">
+						<view class="iconfont icon-location icon_item"></view>
+						<view class="addressicon_item">去选择配送地址</view>
+					</view>
+					<view class="iconfont icon-arrow-right"></view>
+				</view>
+			</block>
+			<!-- 当默认地址不为空的时候显示 -->
+			<block wx:else>
+				<!-- 默认地址 -->
+				<view class="address_view" bindtap="goReceiving_address">
+					<view class="addressicon_view">
+						<view class="iconfont icon-location icon_item"></view>
+						<view class="addressicon_item">
+							<view>{{userAddress[0].name}}{{userAddress[0].phone}}</view>
+							<view>{{userAddress[0].province}} {{userAddress[0].city}} {{userAddress[0].region}} {{userAddress[0].detail}}</view>
+						</view>
+					</view>
+					<view class="iconfont icon-arrow-right"></view>
+				</view>
+			</block>
+			<!-- 彩色条 -->
+			<view class="colorBar">
+				<view wx:for="{{10}}" wx:key="i" wx:for-index="i"></view>
+			</view>
+
+			<!-- 这是商品详情订单显示的页面 -->
+			<block wx:if="{{!totalPrice}}">
+				<!-- 订单列表 -->
+				<view class="orderList_view">
+					<view class="scroll-view_box">
+						<view class="view_left">
+							<image src="{{orderList.goods_image}}"></image>
+						</view>
+						<view class="view_right">
+							<view class="view_title">{{orderList.goods_name}}</view>
+							<text class="view_colorText">{{orderList.goods_no}}</text>
+							<view class="view_price">
+								<view>￥{{orderList.goods_price}}</view>
+								<view>×{{orderList.count}}</view>
+							</view>
+						</view>
+					</view>
+					<view class="orderTotal">
+						<view>共{{orderList.count}}件商品，合计: </view>
+						<view>￥{{orderList.count * orderList.goods_price}}</view>
+					</view>
+				</view>
+				<!-- 费用 -->
+				<view class="cost">
+					<view class="totalAmount">
+						<view>商品总金额:</view>
+						<view>￥{{orderList.count * orderList.goods_price}}</view>
+					</view>
+					<!-- <view class="totalAmount">
+					<view>配送费用:</view>
+					<view>+￥9.9</view>
+				</view> -->
+				</view>
+
+				<!-- 提交订单 -->
+				<view class="placeOrder">
+					<view class="actualPayment">
+						<view class="actualPayment_text">实付款:</view>
+						<view class="actualPayment_price">￥{{orderList.count * orderList.goods_price}}</view>
+					</view>
+					<view class="order_btn" bindtap="shopInfoOrderList">提交订单</view>
+				</view>
+			</block>
+
+			<!-- 这是购物车订单显示的页面 -->
+			<block wx:else>
+				<!-- 订单列表 循环订单列表数组对象 -->
+				<block wx:for="{{orderList}}" wx:key="goods_id" wx:for-index="i">
+					<view class="orderList_view">
+						<view class="scroll-view_box">
+							<view class="view_left">
+								<image src="{{item.goods_image}}"></image>
+							</view>
+							<view class="view_right">
+								<view class="view_title">{{item.goods_name}}</view>
+								<text class="view_colorText">{{item.goods_no}}</text>
+								<view class="view_price">
+									<view>￥{{item.goods_price}}</view>
+									<view>×{{item.count}}</view>
+								</view>
+							</view>
+						</view>
+						<view class="orderTotal">
+							<view>共{{item.count}}件商品，合计: </view>
+							<view>￥{{item.count * item.goods_price}}</view>
+						</view>
+					</view>
+				</block>
+				<!-- 费用 -->
+				<view class="cost">
+					<view class="totalAmount">
+						<view>商品总金额:</view>
+						<view>￥{{totalPrice}}</view>
+					</view>
+					<!-- <view class="totalAmount">
+					<view>配送费用:</view>
+					<view>+￥9.9</view>
+				</view> -->
+				</view>
+
+				<!-- 提交订单 -->
+				<view class="placeOrder">
+					<view class="actualPayment">
+						<view class="actualPayment_text">实付款:</view>
+						<view class="actualPayment_price">￥{{totalPrice}}</view>
+					</view>
+					<view class="order_btn" bindtap="shopCatOrderList">提交订单</view>
+				</view>
+			</block>
+		</view>
+	</scroll-view>
+</view>

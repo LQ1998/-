@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "input-component" : "../../components/input/input"
+  },
+  "navigationStyle": "custom",
+  "disableScroll": true
+}

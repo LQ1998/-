@@ -1,0 +1,9 @@
+<view class="scroll-view_item_components-tpApril" style="margin-right:{{extclass?'0':'20rpx'}};">
+	<view class="shopImage_view">
+		<image src="{{likeList.goods_image}}"></image>
+	</view>
+	<view class="shopText_view">
+		<view>{{likeList.goods_name}}</view>
+		<view>￥{{likeList.goods_price}}</view>
+	</view>
+</view>

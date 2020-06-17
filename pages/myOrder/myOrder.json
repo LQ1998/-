@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "swiper-orderAdd": "/components/swiper-orderAdd/swiper-orderAdd",
+    "swiper-toBePaid": "/components/swiper-toBePaid/swiper-toBePaid",
+    "swiper-toBeBelivered": "/components/swiper-toBeBelivered/swiper-toBeBelivered",
+    "swiper-toBeHarvested": "/components/swiper-toBeHarvested/swiper-toBeHarvested"
+  },
+  "navigationStyle": "custom",
+  "disableScroll": true
+}

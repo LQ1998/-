@@ -1,0 +1,143 @@
+page {
+  height: 100%;
+}
+
+/* 导航栏 */
+.navBar {
+  width: 100%;
+  background-color: #FFDD00;
+}
+
+.navBar .navBar_title {
+  /* width: 600rpx; */
+  font-size: 36rpx;
+  font-weight: bold;
+  color: black;
+  display: flex;
+  align-items: center;
+}
+
+.my_box {
+  height: 100%;
+  width: 100%;
+  /* position: relative; */
+  background-color: #F7F7F7;
+}
+
+/* 用户 */
+.my_box .navBar_user {
+  height: 290rpx;
+  width: 100%;
+  background-color: #FFDD00;
+  padding-top: 50rpx;
+  position: relative;
+}
+
+.my_box .navBar_user .user {
+  display: flex;
+  align-items: center;
+  height: 132rpx;
+  width: 100%;
+}
+
+.my_box .navBar_user .user .avatar_user {
+  width: 132rpx;
+  height: 132rpx;
+  margin-right: 30rpx;
+  margin-left: 80rpx;
+  box-sizing: border-box;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.my_box .navBar_user .user .avatar_user image {
+  width: 100%;
+  height: 100%;
+}
+
+.my_box .navBar_user .user .username {
+  font-size: 36rpx;
+}
+
+/* 订单 */
+.my_box .order {
+  width: 708rpx;
+  background-color: #fff;
+  padding: 30rpx;
+  box-sizing: border-box;
+  position: absolute;
+  /* top: 352rpx; */
+  left: calc(50% - 354rpx);
+  border-bottom: 2rpx #EEEEEE solid;
+  bottom: -126rpx;
+  /* filter: progid:DXImageTransform.Microsoft.Shadow(color=#909090, direction=0, strength=4); */
+  /*ie*/
+  /* -moz-box-shadow: 0 0 10rpx #909090; */
+  /*firefox*/
+  /* -webkit-box-shadow: 0 0 10rpx #909090; */
+  /*safari或chrome*/
+  /* box-shadow: 0 0 10rpx #909090; */
+  /*opera或ie9*/
+
+}
+
+.my_box .order .title_order {
+  display: flex;
+  padding-bottom: 20rpx;
+  justify-content: space-between;
+  font-size: 30rpx;
+  border-bottom: 2rpx #EEEEEE solid;
+}
+
+.my_box .order .title_order view:nth-child(2) {
+  font-size: 24rpx;
+  color: #757575;
+}
+
+.my_box .order .order_list {
+  padding-top: 20rpx;
+  display: flex;
+  /* justify-content: space-between; */
+}
+
+.my_box .order .order_list .order_listAll {
+  flex: 1;
+}
+
+.my_box .order .order_list .order_listAll>text {
+  display: flex;
+  justify-content: center;
+}
+
+.my_box .order .order_list .order_listAll>view {
+  text-align: center;
+  font-size: 24rpx;
+  color: #757575;
+}
+
+/* 底部 */
+.my_box .user_bottom {
+  background-color: #fff;
+  margin-top: 150rpx;
+
+}
+.my_box .user_bottom .address {
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx;
+  border-bottom: 2rpx #EEEEEE solid;
+  box-sizing: border-box;
+}
+.my_box .user_bottom .address .address_left text:nth-child(1){
+  margin-right: 20rpx;
+  color: #757575;
+}
+
+.my_box .user_bottom .address .address_left text:nth-child(2){
+  font-size: 30rpx;
+  color: #444444;
+}
+.address_right {
+  font-size: 26rpx;
+  color: #AFAFAF;
+}

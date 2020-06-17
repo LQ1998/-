@@ -1,0 +1,100 @@
+/* 导航栏 */
+.navBar {
+  width: 100%;
+  background-color: #fff;
+}
+
+.navBar .navBar_title {
+  /* width: 600rpx; */
+  font-size: 36rpx;
+  font-weight: bold;
+  color: black;
+  display: flex;
+  align-items: center;
+}
+
+/* 页面 */
+.grouping_box {
+  background-color: #fff;
+  height: 100%;
+}
+
+/* 内容 */
+.mian {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+/* 这是左边内容 */
+.mian .left_mian {
+  width: 210rpx;
+  height: 100%;
+  background-color: #F8F8F8;
+  margin-bottom: 10rpx;
+  display: flex;
+  flex-direction: column;
+}
+/* .left_scroll::-webkit-scrollbar{
+  display: none;
+  width: 0;
+  height: 0;
+  color: transparent;
+} */
+
+.mian .left_mian .left_view {
+  width: 210rpx;
+  height: 96rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28rpx;
+  color: #4A4A4A;
+
+}
+
+
+.active {
+  background-color: #fff;
+  color: red !important;
+}
+
+/* 这是右边内容 */
+.mian .right_main {
+  padding: 30rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.mian .right_main .image_view {
+  height: 190rpx;
+  width: 140rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20rpx;
+}
+.mian .right_main .image_view:nth-child(3n) {
+  margin-right: 0;
+}
+.mian .right_main .image_view:nth-child(3n+1) {
+  padding-left: 10rpx;
+}
+
+
+.mian .right_main .image_view .image_item {
+  width: 100%;
+  height: 140rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+
+.mian .right_main .image_view .image_item image {
+  width: 100%;
+  height: 100%;
+}
+
+.mian .right_main .image_view .image_text {
+  font-size: 28rpx;
+}

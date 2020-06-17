@@ -1,0 +1,16 @@
+{
+  "name": "wx_shop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mini-program-iconfont-cli": "^0.6.0",
+    "vant-weapp": "^0.5.28",
+    "weui-miniprogram": "^1.0.3"
+  }
+}

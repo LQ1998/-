@@ -1,0 +1,41 @@
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.login>image {
+  width: 256rpx;
+  height: 256rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 100rpx;
+}
+
+.login>text {
+  display: block;
+}
+
+.login .title {
+  font-size: 34rpx;
+}
+
+.login .info {
+  font-size: 28rpx;
+  color: #666;
+  margin-top: 20rpx;
+}
+.login button {
+  width: 300rpx;
+  padding: 10rpx;
+  line-height: 1.5;
+}
+
+.login .btn1 {
+margin-top: 20rpx;
+}
+
+.login .btn2 {
+  margin-top: 20rpx;
+}
